@@ -1,5 +1,12 @@
 function rotateArray(arr, k) {
-  // type your code here
+
+  while (k > 0 && arr.length > 0) {
+    let movedVar = arr[arr.length-1]
+    arr.pop(movedVar)
+    arr.unshift(movedVar)
+    --k
+  }
+  return arr
 }
 
 if (require.main === module) {
@@ -16,9 +23,10 @@ if (require.main === module) {
 
   console.log("Expecting: [1, 2, 3]");
   console.log("=>", rotateArray([1, 2, 3], 3));
+
 }
 
 module.exports = rotateArray;
 
-// Please add your pseudocode to this file
-// And a written explanation of your solution
+// Remove the last value from the array and unshift it to the front of the array.
+// Do this n times where n is the function arguement. 
